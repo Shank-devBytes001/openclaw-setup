@@ -1,4 +1,4 @@
-# 🦀 OpenClaw: The Custom AI Gateway
+# 🦀 OpenClaw: VPS Set Up
 
 [![Docker](https://img.shields.io/badge/Docker-24.0+-blue.svg?style=for-the-badge&logo=docker)](https://www.docker.com/)
 [![NVIDIA](https://img.shields.io/badge/NVIDIA-NIM-green.svg?style=for-the-badge&logo=nvidia)](https://build.nvidia.com/)
