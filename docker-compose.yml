@@ -1,0 +1,25 @@
+services:
+  openclaw-gateway:
+    image: coollabsio/openclaw:latest
+    container_name: openclaw-gateway
+    restart: unless-stopped
+    ports:
+      - "18789:18789"
+    env_file: .env
+    environment:
+      - NODE_ENV=production
+      - OPENCLAW_PRIMARY_MODEL=kimi
+      - OPENCLAW_AUTH_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
+      - NVIDIA_API_KEY=${MOONSHOT_API_KEY}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./data:/home/node/.openclaw
+    shm_size: '2gb'
+    links:
+      - browser
+
+  browser:
+    image: coollabsio/openclaw-browser:latest
+    container_name: openclaw-browser
+    restart: unless-stopped
+    shm_size: '2gb'
